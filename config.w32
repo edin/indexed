@@ -1,0 +1,7 @@
+ARG_ENABLE('indexed_array', 'indexed_array support', 'no');
+
+if (PHP_INDEXED_ARRAY != 'no') {
+	AC_DEFINE('HAVE_INDEXED_ARRAY', 1, 'indexed_array support enabled');
+
+	EXTENSION('indexed_array', 'indexed_array.cpp', null, '/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1');
+}
